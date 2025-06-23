@@ -1,0 +1,80 @@
+::ng-deep .mat-mdc-table {
+  min-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.custom-table {
+  border: none;
+  font-size: 14px;
+  background-color: white;
+  text-align: center;
+}
+
+.custom-table th {
+  background-color: var(--main-color);
+  color: #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.custom-table td {
+  text-align: center;
+  padding: 8px;
+  border: none;
+  height: 40px;
+  color: var(--main-color);
+}
+.custom-table tr:nth-child(even) {
+  background-color: #e7e8ea79; /* أو أي لون تفضليه */
+}
+.custom-table .table-input {
+  width: 100%;
+  padding: 0 10px;
+  height: 100%;
+  caret-color: #ddd;
+  border: 1px solid #ddd;
+}
+.custom-table .table-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(63, 81, 181, 0.2); /* ظل أزرق ناعم */
+}
+/* في component.css */
+mat-form-field {
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-mdc-form-field {
+  background-color: transparent !important;
+  width: fit-content !important;
+  height: fit-content !important; /* أو الحجم اللي تعايزيه */
+}
+
+/* تقليل الـ height */
+::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  height: 50px !important; /* أو الحجم اللي تعايزيه */
+  background-color: transparent !important;
+}
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+::ng-deep .mat-mdc-option .mdc-list-item__primary-text,
+::ng-deep .mat-mdc-select {
+  font-size: 13px !important;
+}
+.mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline {
+  border-color: #ccc !important;
+}
+
+/* تقليل الـ padding */
+.mat-mdc-form-field .mat-mdc-form-field-infix {
+  padding: 8px 0 !important;
+  min-height: auto !important;
+}
+
+.mat-mdc-select-trigger {
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+  width: auto !important;
+}

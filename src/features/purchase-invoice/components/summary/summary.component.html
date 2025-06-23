@@ -1,0 +1,27 @@
+<section
+  class="price-summary text-[var(--main-color)] ps-5 pe-[15%] py-2 capitalize text-left"
+>
+  <div class="grid grid-cols-2">
+    <div class="pe-5 pt-4">
+      <span class="font-medium text-[13px] block"> total due</span>
+      <h2 class="font-bold border-b border-b-gray-500 my-1 w-fit pe-5">
+        $100 USD
+      </h2>
+      <p class="text-[8px]">late charge for 10 days</p>
+    </div>
+    <div>
+      <div
+        class="ms-[8%] px-3 flex justify-between items-center text-[13px] border-b border-b-gray-200 py-4"
+      >
+        <span>subtotal</span>
+        <span>${{ total }}</span>
+      </div>
+      <div
+        class="ms-[8%] px-3 flex justify-between items-center py-4 bg-[var(--main-color)] text-gray-50 text-sm font-bold"
+      >
+        <span class="uppercase">total</span>
+        <span>${{ total }}</span>
+      </div>
+    </div>
+  </div>
+</section>

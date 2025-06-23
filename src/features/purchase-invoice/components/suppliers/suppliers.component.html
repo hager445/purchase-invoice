@@ -1,0 +1,98 @@
+<section class="my-4">
+  <form action="" [formGroup]="metaDataForm">
+    <div class="grid grid-cols-2 text-[var(--main-color)] capitalize gap-8">
+      <!-- 🔵 Column 1: Supplier Info -->
+      <div class="place-self-start w-full">
+        <!-- Supplier Name -->
+        <div>
+          <mat-form-field>
+            <mat-label>Supplier Name</mat-label>
+            <mat-select
+              (selectionChange)="getSupplierInfo($event.value)"
+              style="min-width: 150px"
+              formControlName="supplierId"
+            >
+              @for (supplier of suppliers; track supplier.id) {
+              <mat-option [value]="supplier.id">{{ supplier.name }}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          @if (metaDataForm.get('supplierId')?.invalid) {
+          <span class="text-red-700 block text-[11px]"
+            >this field is required!</span
+          >
+          }
+        </div>
+
+        <!-- Contact Info -->
+        <div class="py-1 pt-4 text-[12px]">
+          <h4 class="font-medium">Contact Person</h4>
+          <p>
+            Phone: <span>{{ supplierInfo().phone }}</span>
+          </p>
+          <p>
+            Email: <span>{{ supplierInfo().email }}</span>
+          </p>
+        </div>
+
+        <!-- Notes -->
+        <mat-form-field class="w-full">
+          <mat-label>Notes</mat-label>
+          <textarea
+            matInput
+            (change)="updateMetaData()"
+            placeholder="Write your note..."
+            formControlName="notes"
+            rows="4"
+          ></textarea>
+        </mat-form-field>
+        @if (metaDataForm.get('notes')?.invalid) {
+        <span class="text-red-700 block text-[11px]"
+          >this field is required!</span
+        >
+        }
+      </div>
+
+      <!-- 🔴 Column 2: Invoice Info -->
+      <div class="place-self-end text-[12px]">
+        <!-- Invoice No -->
+        <p><strong>Invoice No.:</strong> <span>4893</span></p>
+
+        <!-- Invoice Date -->
+        <div class="mt-4">
+          <mat-form-field>
+            <mat-label>Invoice Date</mat-label>
+            <input
+              matInput
+              (dateChange)="updateMetaData()"
+              [matDatepicker]="picker"
+              formControlName="invoiceDate"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          @if (metaDataForm.get('invoiceDate')?.invalid) {
+          <span class="text-red-700 block text-[11px]"
+            >this field is required!</span
+          >
+          }
+        </div>
+
+        <!-- Payment Method -->
+        <div class="mt-4">
+          <h4 class="font-medium">Payment Method</h4>
+          <p>
+            Account ID: <span>{{ supplierInfo().accountNumber }}</span>
+          </p>
+          <p>
+            Account Name:
+            <span class="font-medium">{{ supplierInfo().bankName }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
