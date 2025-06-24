@@ -21,10 +21,30 @@
       "name": "Monitor"
     }
   ],
-  "invoices": [],
+  "invoices": [
+    {
+      "id": "5302",
+      "metaData": {
+        "id": "",
+        "invoiceDate": "2025-06-08T21:00:00.000Z",
+        "supplierId": "2",
+        "notes": "hh"
+      },
+      "items": [
+        {
+          "itemCode": "P002",
+          "itemName": "Mouse",
+          "price": "70",
+          "quantity": 1,
+          "total": 70
+        }
+      ],
+      "grandTotal": 70
+    }
+  ],
   "suppliers": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Alpha Industries",
       "contactPerson": "John Doe",
       "phone": "+1 555-1234",
@@ -36,7 +56,7 @@
       "paymentTerms": "Net 30"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Beta Supplies Ltd.",
       "contactPerson": "Jane Smith",
       "phone": "+1 555-5678",
@@ -48,7 +68,7 @@
       "paymentTerms": "Net 45"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Gamma Traders",
       "contactPerson": "Ahmed Mostafa",
       "phone": "+20 2 23456789",

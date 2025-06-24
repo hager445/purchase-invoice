@@ -49,15 +49,20 @@ export class SuppliersComponent {
 getSuppliers(){
 this._Suppliers.getSuppliers().subscribe({next:(res)=>{
   this.suppliers = res;
+  console.log(this.suppliers);
+  
 }})
 }
 // ===============
-getSupplierInfo(selectedName:string){
-this.suppliers.forEach(supplier => {
-  if (supplier.name === selectedName) {
-    this.supplierInfo.set(supplier);
-  }
-});
+getSupplierInfo(selectedId:number){
+  console.log(selectedId);
+    this.suppliers.forEach(supplier => {
+      if (supplier.id === selectedId) {
+        this.supplierInfo.set(supplier);
+        console.log(this.supplierInfo());
+      }
+    });
+  
 }
 updateMetaData(){
 this.invoiceMetaData = this.metaDataForm.value;
