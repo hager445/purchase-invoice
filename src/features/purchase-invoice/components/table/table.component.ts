@@ -116,10 +116,12 @@ this._Invoices.insertInvoice(this.newInvoice).subscribe(
   {
 next:(res)=>{
 console.log(res);
-this._Toastr.success('The Invoice is added successfuly!')
+this._Toastr.success('The Invoice is added successfuly!');
+
 this.resetAll();
-  }}
+}}
 )
+this._Supplier.startNewInvoice.set(false);
 }
 setNewInvoiceToSend(){
   this.newInvoice = {

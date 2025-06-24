@@ -33,7 +33,8 @@ export class SuppliersComponent {
   constructor(private _Suppliers:SuppliersService , private _Fb:FormBuilder){
     effect(()=>{
       if (_Suppliers.startNewInvoice()) {
-        this.metaDataForm.reset()
+        this.supplierInfo.set({}as Isupplier);
+        this.metaDataForm.reset();
       }
     })
   }
